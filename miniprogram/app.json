@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/wustguide/wustguide",
+    "pages/logs/logs"
+  ],
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1298e0",
+    "navigationBarTitleText": "武科大地图",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap7.json"
+}

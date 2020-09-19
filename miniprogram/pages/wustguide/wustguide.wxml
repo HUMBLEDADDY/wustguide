@@ -1,0 +1,329 @@
+<!--pages/sxauguide/sxauguide.wxml-->
+
+
+<scroll-view scroll-x class='scrollx' >
+  <navigator  open-type="redirect" catchtap='hx_door'>校门</navigator>
+  <navigator  open-type="redirect" catchtap='hx_canteen'>食堂</navigator>
+  <navigator  open-type="redirect" catchtap='hx_supermarket'>超市</navigator>
+  <navigator  open-type="redirect" catchtap='hx_teach'>教学楼</navigator>
+  <navigator   open-type="redirect" catchtap='hx_hospital'>医院</navigator>
+  <navigator  open-type="redirect" catchtap='hx_playground'>操场</navigator>
+  <navigator  open-type="redirect" catchtap='hx_library'>图书馆</navigator>
+  <navigator  open-type="redirect" catchtap='hx_dorm'>宿舍</navigator> 
+</scroll-view>
+
+
+<!--地图-->
+<!--longitude经度  latitude纬度 -->
+<map
+  id="map"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="{{scale}}"
+  class="map"
+  markers='{{markers}}' 
+  show-location='true'  
+  bindcallouttap='click' 
+  bindmarkertap='background'
+></map>
+<view class="{{bubbleposition}}">{{maomao}}</view>
+<view class="{{maomaoposition}}" style="  background-image: url(https://666f-forum-a3csx-1259727483.tcb.qcloud.la/maomao.gif?sign=69f7c1bb31c516854d9b0ce5d2e0c66c&t=1600045450);"></view>
+
+
+<!-- 校门 -->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_door}}"> 
+
+  <view class='hx_bottomtext'>校门</view>
+  <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='westerndoor'>
+                <view  class="weui-cell__bd">西门</view>      
+                <image id='westerndoor' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='southerndoor'>
+                <view class="weui-cell__bd">南门</view>      
+                <image id='southerndoor' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+              </scroll-view>
+          </view>
+  </view>
+</view>
+
+
+
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_canteen}}"> 
+        <view class='hx_bottomtext'>食堂</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='northerncanteen'>
+                <view  class="weui-cell__bd">北苑食堂</view>      
+                <image id='northerncanteen' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='southerncanteen'>
+                <view class="weui-cell__bd">南苑食堂</view>      
+                <image id='southerncanteen' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+</scroll-view>
+        </view>
+</view>
+</view>
+
+
+
+
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_supermarket}}"> 
+        <view class='hx_bottomtext'>超市</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+                <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='southernsupermarket'>
+                <view  class="weui-cell__bd">北苑超市</view>      
+                <image id='southernsupermarket' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='southernshop'>
+                <view class="weui-cell__bd">北苑便利店</view>      
+                <image id='southernshop' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='northernsupermarket'>
+                <view  class="weui-cell__bd">南苑超市</view>      
+                <image id='northernsupermarket' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='northernshop'>
+                <view class="weui-cell__bd">南苑便利店</view>      
+                <image id='northernshop' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+               </scroll-view>
+        </view>
+</view>
+</view>
+
+
+
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_teach}}"> 
+        <view class='hx_bottomtext'>教学楼</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j1'>
+                <view  class="weui-cell__bd">教一(恒大楼)</view>      
+                <image id='j1' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j2'>
+                <view class="weui-cell__bd">教二</view>      
+                <image id='j2' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j3'>
+                <view  class="weui-cell__bd">教三</view>      
+                <image id='j3' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j4'>
+                <view class="weui-cell__bd">教四</view>      
+                <image id='j4' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j5'>
+                <view  class="weui-cell__bd">教五</view>      
+                <image id='j5' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j6'>
+                <view class="weui-cell__bd">教六</view>      
+                <image id='j6' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j7'>
+                <view  class="weui-cell__bd">教七</view>      
+                <image id='j7' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j8'>
+                <view class="weui-cell__bd">教八</view>      
+                <image id='j8' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='j9'>
+                <view class="weui-cell__bd">教九</view>      
+                <image id='j9' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+</scroll-view>
+        </view>
+</view>
+</view>
+
+
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_hospital}}"> 
+        <view class='hx_bottomtext'>医院</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+                <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='hospital'>
+                <view class="weui-cell__bd">校医院</view>      
+                <image id='hospital' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            </scroll-view>
+        </view>
+</view>
+</view>  
+
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_playground}}"> 
+        <view class='hx_bottomtext'>操场</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+                <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='southernplayground'>
+                <view class="weui-cell__bd">北苑操场</view>      
+                <image id='southernplayground' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='northernplayground'>
+                <view class="weui-cell__bd">南苑操场</view>      
+                <image id='northernplayground' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            </scroll-view>
+        </view>
+</view>
+</view>   
+
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_library}}"> 
+        <view class='hx_bottomtext'>图书馆</view>
+<view class="page__bd">
+ 
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+                <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='libary'>
+                <view class="weui-cell__bd">图书馆</view>      
+                <image id='libary' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            </scroll-view>
+        </view>
+</view>
+</view>   
+
+
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_dorm}}"> 
+        <view class='hx_bottomtext'>宿舍</view>
+<view class="page__bd">
+     
+        <view class="weui-cells weui-cells_after-title">
+            <scroll-view scroll-y class='scrolly' >
+                <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b1'>
+                <view  class="weui-cell__bd">北一</view>      
+                <image id='b1' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b2'>
+                <view class="weui-cell__bd">北二</view>      
+                <image id='b2' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b3'>
+                <view  class="weui-cell__bd">北三</view>      
+                <image id='b3' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b4'>
+                <view class="weui-cell__bd">北四</view>      
+                <image id='b4' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b5'>
+                <view  class="weui-cell__bd">北五</view>      
+                <image id='b5' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b6'>
+                <view class="weui-cell__bd">北六</view>      
+                <image id='b6' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b7'>
+                <view  class="weui-cell__bd">北七</view>      
+                <image id='b7' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b8'>
+                <view class="weui-cell__bd">北八</view>      
+                <image id='b8' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b9'>
+                <view class="weui-cell__bd">北九</view>      
+                <image id='b9' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>         
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b10'>
+                <view  class="weui-cell__bd">北十</view>      
+                <image id='b10' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b11'>
+                <view class="weui-cell__bd">北十一</view>      
+                <image id='b11' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b12'>
+                <view  class="weui-cell__bd">北十二</view>      
+                <image id='b12' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b13'>
+                <view class="weui-cell__bd">北十三</view>      
+                <image id='b13' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b14'>
+                <view  class="weui-cell__bd">北十四</view>      
+                <image id='b14' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='b15'>
+                <view class="weui-cell__bd">北十五</view>      
+                <image id='b15' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n1'>
+                <view  class="weui-cell__bd">南一</view>      
+                <image id='n1' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n2'>
+                <view class="weui-cell__bd">南二</view>      
+                <image id='n2' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n3'>
+                <view class="weui-cell__bd">南三</view>      
+                <image id='n3' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n4'>
+                <view  class="weui-cell__bd">南四</view>      
+                <image id='n4' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n5'>
+                <view class="weui-cell__bd">南五</view>      
+                <image id='n5' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n6'>
+                <view  class="weui-cell__bd">南六</view>      
+                <image id='n6' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n7'>
+                <view class="weui-cell__bd">南七</view>      
+                <image id='n7' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n8'>
+                <view  class="weui-cell__bd">南八</view>      
+                <image id='n8' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n9'>
+                <view class="weui-cell__bd">南九</view>      
+                <image id='n9' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n10'>
+                <view  class="weui-cell__bd">南十</view>      
+                <image id='n10' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n11'>
+                <view class="weui-cell__bd">南十一</view>      
+                <image id='n11' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n12'>
+                <view class="weui-cell__bd">南十二</view>      
+                <image id='n12' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  open-type="redirect" catchtap='n13'>
+            <view class="weui-cell__bd">南十三</view>      
+                <image id='n13' style='width:25px;height:25px' catchtap='go' src='../../images/gps.jpg' mode='aspectFit'></image>
+            </navigator>
+            </scroll-view>
+
+      </view>
+    </view>
+</view>   
+<view class="banquan">
+    @领航工作室
+</view>
